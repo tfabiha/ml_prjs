@@ -1,3 +1,5 @@
+Final analysis and thoughts
+
 The classifiers were based on Naive Bayes and all were trained with CountVectorizer obtaining both uni- and bi-grams. These n-gram features were all then passed through to select the best 1000 features of 20000+ features to increase the probability of success when identifying labels. My initial macro F1-score for the devset in the custom model with SVM and all ngram features was at most 0.47, however using both Naive Bayes and select 1000 best allowed me to increase my macro F1-score to 0.52. I chose ngrams range(1, 2) for my models because they gave the best results of all the possible ngram models. Adding in the tri-grams and four-grams didn't offer anything in terms of my macro F1-score, even when selecting the best 100 features. The number of features selected was also chosen through trial and error
 
 For the lexicon features I found that including both of them helped far more than including a lexicon and encoding, and boosted my F1-score up by 0.02 points for the custom model. This is very similar to what we can see in Mohammad et al., that encodings offer barely any indication of sentiment.
